@@ -32,7 +32,8 @@ class MainActivity : ComponentActivity() {
                         navArgument("pokemonName"){
                             type = NavType.StringType
                         }
-                    )){
+                    ))
+                    {
                         val random = Random()
                         val dominantColor = Color(random.nextInt(256),
                             random.nextInt(256),

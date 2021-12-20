@@ -28,11 +28,13 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltNavGraphViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.jayesh.jetpackcomposepokedex.R
@@ -381,4 +383,17 @@ fun PokemonBaseStats(
             Spacer(modifier = Modifier.height(8.dp))
         }
     }
+}
+@Preview(name = "Android greeting")
+@Composable
+fun PreviewGreeting() {
+    val random = Random()
+    val dominantColor = Color(random.nextInt(256),
+        random.nextInt(256),
+        random.nextInt(256))
+    PokemonDetailScreen(
+        dominantColor = dominantColor,
+        pokemonName = "",
+        navController = rememberNavController()
+    )
 }
